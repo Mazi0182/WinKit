@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyInstaller / Build outputs
+*.spec
+build/
+dist/
+bin/
+obj/
+
+# Binaries, Drivers, and Archives (Ignore by default)
+*.exe
+*.dll
+*.sys
+*.iso
+*.zip
+*.7z
+
+# Whitelisted Core Binaries & Drivers (Required for standalone execution)
+!7z.exe
+!7z.dll
+!oscdimg.exe
+!OOSU10.exe
+!zapret/*.exe
+!zapret/*.dll
+!zapret/*.sys
+
+# Internal / Agent Memory & Scratchpads (Do not push to public repo)
+AGENTS.md
+GEMINI.md
+SKILL.md
+GOREV.md
+HAFIZA.md
+CALISANLAR.md
+gemini.cmd
+VMLIVE/
+
+# IDEs and Editors
+.vs/
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.aider*
+
+# Logs and Temporaries
+*.log
+*.tmp
+*.bak

@@ -49,3 +49,4 @@ VMLIVE/
 *.log
 *.tmp
 *.bak
+[0-9].png

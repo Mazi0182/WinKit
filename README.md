@@ -33,7 +33,7 @@ Windows 11 25H2 kurulum medyalarını doğrudan ayrıştırarak katılımsız ku
 * **Cihaz Şifrelemesini Kapatma:** Otomatik BitLocker ve sürücü şifreleme süreçlerini devre dışı bırakarak disk performansını ve veri erişilebilirliğini korur.
 
 <div align="center">
-  <img src="1.png" alt="WinKit ISO Düzenleyici" width="900" />
+  <img src="https://github.com/user-attachments/assets/85b80dad-4b68-4a7f-9345-155d1ea84854" alt="WinKit ISO Düzenleyici" width="900" />
 </div>
 
 <br/>
@@ -47,7 +47,7 @@ Windows 11 25H2 ile birlikte gelen gömülü telemetri mekanizmalarını, reklam
 * **Dinamik Çip Filtreleme:** Ayarlar arasında hızlı geçiş sağlayan durum odaklı filtreleme mimarisi (Oyun ve Performans, Gizlilik, Sistem ve Görünüm, Servisler ve Gelişmiş).
 
 <div align="center">
-  <img src="2.png" alt="WinKit Debloat ve Sistem Optimizasyonu" width="900" />
+  <img src="https://github.com/user-attachments/assets/33d32ba7-924b-4824-810c-2a620a490add" alt="WinKit Debloat ve Sistem Optimizasyonu" width="900" />
 </div>
 
 <br/>
@@ -61,7 +61,7 @@ Derin Paket İnceleme (DPI) sansür mekanizmalarını donanım seviyesinde aşma
 * **DPI Test Aracı (BlockCheck):** Sansürlü hedeflere yönelik paket parçalama stratejilerini gerçek zamanlı olarak test eder.
 
 <div align="center">
-  <img src="3.png" alt="WinKit Anti-DPI ve Güvenli DNS" width="900" />
+  <img src="https://github.com/user-attachments/assets/17bbb0ba-2332-4b49-8566-c4ad5accbe50" alt="WinKit Anti-DPI ve Güvenli DNS" width="900" />
 </div>
 
 <br/>
@@ -74,7 +74,7 @@ Windows çekirdeğinde (`HKLM\SYSTEM\CurrentControlSet\Control\Keyboard Layout\S
 * **Oturum Entegrasyonu:** Arka planda çalışan sürekli bir hook mekanizmasına ihtiyaç duymadan, doğrudan Windows çekirdek eşlemesiyle çalışır.
 
 <div align="center">
-  <img src="4.png" alt="WinKit Tuş Dönüştürücü" width="900" />
+  <img src="https://github.com/user-attachments/assets/6ae537b2-a572-4698-a3de-db39f4aee5b6" alt="WinKit Tuş Dönüştürücü" width="900" />
 </div>
 
 <br/>
@@ -89,7 +89,7 @@ Yapılan tüm çekirdek müdahalelerini, politika kısıtlamalarını ve ağ yap
 * **Sistem Geri Yükleme:** Değişiklikler öncesinde ve sonrasında Windows Sistem Geri Yükleme Noktası oluşturur.
 
 <div align="center">
-  <img src="5.png" alt="WinKit Geri Yükleme" width="900" />
+  <img src="https://github.com/user-attachments/assets/d6b621ef-e518-4ae1-b7d2-950e1a8081f8" alt="WinKit Geri Yükleme" width="900" />
 </div>
 
 <br/>
@@ -101,7 +101,7 @@ Sistem lisans durumunu yerel Windows Management Instrumentation (WMI) üzerinden
 * **SPP Altyapısı:** Yazılım Koruma Platformu (Software Protection Platform) yapılandırmasını görüntüler.
 
 <div align="center">
-  <img src="6.png" alt="WinKit Windows Lisanslama" width="900" />
+  <img src="https://github.com/user-attachments/assets/9fe56d07-63c4-4422-86d9-67c8bf001d6a" alt="WinKit Windows Lisanslama" width="900" />
 </div>
 
 ---

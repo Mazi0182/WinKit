@@ -1,166 +1,225 @@
-# WinKit 🚀
+# WinKit
 
 <div align="center">
 
-<img src="winkit_logo.png" alt="WinKit Logo" width="160" />
+<img src="winkit_logo.png" alt="WinKit Logo" width="140" />
 
-### Yeni Nesil Windows 10 & 11 Sistem İyileştirme, Debloat, Anti-DPI ve İnce Ayar Paketi
+### Windows 11 (25H2) Sistem İyileştirme, Debloat, Anti-DPI ve İnce Ayar Paketi
 
-[![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D6?style=for-the-badge&logo=windows)](https://www.microsoft.com)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)](https://www.python.org/)
-[![GUI](https://img.shields.io/badge/GUI-PyQt6-41CD52?style=for-the-badge&logo=qt)](https://riverbankcomputing.com/software/pyqt/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![OS - Windows 11 25H2](https://img.shields.io/badge/OS-Windows%2011%20(25H2)-0078D6?style=flat-square&logo=windows)](https://www.microsoft.com)
+[![Python - 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python)](https://www.python.org/)
+[![GUI - PyQt6](https://img.shields.io/badge/GUI-PyQt6-41CD52?style=flat-square&logo=qt)](https://riverbankcomputing.com/software/pyqt/)
+[![License - MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 
 </div>
 
 ---
 
-## 📌 WinKit Nedir?
+## Proje Hakkında
 
-**WinKit**, Windows 10 ve Windows 11 işletim sistemlerinde telemetriyi en aza indirmek, gereksiz arka plan servislerini (bloatware) kalıcı olarak tasfiye etmek, DPI tabanlı internet sansürlerini aşmak ve sistem performansını maksimize etmek için geliştirilmiş hepsi-bir-arada sistem yönetim ve ince ayar aracıdır.
+WinKit, Windows 11 25H2 (Build 26200+) işletim sistemi mimarisi hedeflenerek geliştirilmiş; telemetri tasfiyesi, sistem debloat işlemleri, DPI engeli aşma (Anti-DPI) ve düşük seviyeli Windows ince ayarlarını tek bir merkezde toplayan açık kaynaklı bir sistem yönetim aracıdır.
 
-Modern **PyQt6** grafik arayüzü ve düşük seviyeli Windows API (`winreg`, `ctypes`, `WMI`, `TrustedInstaller` token impersonation) motoruyla donatılan WinKit, sistem üzerinde cerrahi kontrol sağlar.
-
----
-
-## 📸 Ekran Görüntüleri (Screenshots)
-
-### 1. ISO Aracı & Katılımsız Kurulum Medyası Düzenleyici
-Windows 11 ISO dosyalarını doğrudan modifiye ederek OOBE ekranındaki internet ve Microsoft hesabı zorunluluklarını atlar; TPM 2.0, Secure Boot ve donanım gereksinimlerini otomatik olarak devre dışı bırakır.
-
-<div align="center">
-  <img src="1.png" alt="WinKit ISO Aracı" width="850" />
-</div>
-
-<br/>
-
-### 2. Debloat & Gelişmiş Sistem Optimizasyonu
-Cortana, OneDrive, Copilot, MSN servisleri gibi gereksiz Windows uygulamalarını StateRepository veritabanı seviyesinde temizler. Oyun gecikmelerini azaltmak için FSO, MPO ve özel güç planlarını devreye alır.
-
-<div align="center">
-  <img src="2.png" alt="WinKit Debloat & Sistem Optimizasyonu" width="850" />
-</div>
-
-<br/>
-
-### 3. Anti-DPI & Güvenli DNS (Zapret ve DoH)
-DPI (Derin Paket İnceleme) tabanlı sansür ve engellemeleri aşmak için Zapret V1 & V2 motorunu Windows servisi olarak kurar. Ağ bağdaştırıcılarına Cloudflare DNS-over-HTTPS (DoH) şablonlarını otomatik işler.
-
-<div align="center">
-  <img src="3.png" alt="WinKit Anti-DPI ve Güvenli DNS" width="850" />
-</div>
-
-<br/>
-
-### 4. Tuş Dönüştürücü (Donanım Seviyesinde Tuş Eşleme)
-Klavye tuşlarını Windows çekirdeğinde (`Scancode Map`) düşük gecikmeyle yeniden haritalandırır veya istenmeyen kısayolları (örneğin dil değiştirme tuş kombinasyonlarını) devre dışı bırakır.
-
-<div align="center">
-  <img src="4.png" alt="WinKit Tuş Dönüştürücü" width="850" />
-</div>
-
-<br/>
-
-### 5. Geri Yükleme & Orijinal Varsayılanlara Dönüş
-Uygulanan sistem değişikliklerini, Defender ilkelerini, Windows Update kısıtlamalarını ve ağ yapılandırmasını tek tıkla orijinal Windows varsayılanlarına döndürür; Sistem Geri Yükleme Noktası oluşturur.
-
-<div align="center">
-  <img src="5.png" alt="WinKit Geri Yükleme" width="850" />
-</div>
-
-<br/>
-
-### 6. Windows Lisanslama & Durum Teşhisi
-WMI SoftwareLicensingProduct üzerinden Windows aktivasyon ve dijital lisans durumunu gerçek zamanlı sorgular.
-
-<div align="center">
-  <img src="6.png" alt="WinKit Windows Lisanslama" width="850" />
-</div>
+Yazılım, üçüncü taraf kabuk komutlarına bağımlılığı asgari düzeyde tutarak düşük seviyeli Windows API'leri (`winreg`, `ctypes`, `WMI`, `TrustedInstaller` token manipülasyonu) ve donanım hızlandırmalı PyQt6 grafik motoru üzerinde inşa edilmiştir.
 
 ---
 
-## ⚡ Özellikler Tablosu
+## Modüller ve Arayüz
 
-| Modül | Açıklama |
-| :--- | :--- |
-| **Sistem Debloat** | AppX paketleri, bulut önerileri, Başlat menüsü reklam pinleri ve telemetriyi temizler. |
-| **Oyun & Performans** | FSO (Fullscreen Optimizations), MPO (Multi-Plane Overlay) ve Ultra Performans Güç Planı. |
-| **Windows Defender** | Kurcalamaya Karşı Koruma uyumlu iki kademeli servis yönetimi ve SecHealthUI koruması. |
-| **Anti-DPI (Zapret)** | Bol-van Zapret (winws/winws2) motoru ile sansürsüz, hızlı ve şifreli DoH internet erişimi. |
-| **ISO Özelleştirme** | Otomatik `autounattend.xml` enjeksiyonu ile sıfır kurulumda kullanıcı hesabı ve donanım bypass. |
-| **Tuş Haritalama** | Windows Registry tabanlı sıfır gecikmeli tuş eşleme motoru. |
-| **Geri Yükleme** | Yapılan ayarları tek tıkla geri alma ve Sistem Geri Yükleme Noktası yönetimi. |
+### 1. ISO Aracı ve Katılımsız Kurulum Medyası Düzenleyici
+
+Windows 11 25H2 kurulum medyalarını doğrudan ayrıştırarak katılımsız kurulum (`autounattend.xml`) kurallarını enjekte eder:
+* **Donanım Zorunluluklarını Atlama:** TPM 2.0, Secure Boot, RAM ve işlemci kontrollerini kurulum anında devre dışı bırakır.
+* **Yerel Hesap Zorlama:** OOBE (Out-of-Box Experience) aşamasındaki zorunlu internet bağlantısı ve Microsoft hesabı dayatmasını aşar.
+* **Cihaz Şifrelemesini Kapatma:** Otomatik BitLocker ve sürücü şifreleme süreçlerini devre dışı bırakarak disk performansını ve veri erişilebilirliğini korur.
+
+<div align="center">
+  <img src="1.png" alt="WinKit ISO Düzenleyici" width="900" />
+</div>
+
+<br/>
+
+### 2. Sistem Debloat ve Performans İnce Ayarları
+
+Windows 11 25H2 ile birlikte gelen gömülü telemetri mekanizmalarını, reklam alanlarını ve arka plan servislerini StateRepository veritabanı düzeyinde temizler:
+* **Uygulama Tasfiyesi:** Cortana, OneDrive, Copilot, MSN servisleri, Xbox altyapısı ve sponsorlu OEM uygulamalarını kalıcı olarak kaldırır.
+* **Görünüm ve Çekirdek Ayarları:** Detaylı mavi ekran (BSOD hata ayrıntıları), Windows karanlık tema zorlaması ve dosya uzantılarının görünürlüğü.
+* **Oyun ve Gecikme Optimizasyonları:** Fullscreen Optimizations (FSO), Multi-Plane Overlay (MPO) ve Ultra Performans Güç Planı yapılandırmaları.
+* **Dinamik Çip Filtreleme:** Ayarlar arasında hızlı geçiş sağlayan durum odaklı filtreleme mimarisi (Oyun ve Performans, Gizlilik, Sistem ve Görünüm, Servisler ve Gelişmiş).
+
+<div align="center">
+  <img src="2.png" alt="WinKit Debloat ve Sistem Optimizasyonu" width="900" />
+</div>
+
+<br/>
+
+### 3. Anti-DPI ve Güvenli DNS Motoru (Zapret & DoH)
+
+Derin Paket İnceleme (DPI) sansür mekanizmalarını donanım seviyesinde aşmak ve güvenli ağ trafiği sağlamak için geliştirilmiş ağ modülü:
+* **Zapret Servis Entegrasyonu:** `winws` (V1) ve `winws2` (V2 - Gelişmiş) motorlarını kalıcı bir Windows servisi olarak yapılandırır.
+* **Şifreli DNS (DoH):** Cloudflare DNS-over-HTTPS (1.1.1.1 & 1.0.0.1) şablonlarını doğrudan ağ bağdaştırıcılarına tanımlar.
+* **IPv4 Odaklı Profil:** IPv6 kaynaklı sızıntıları ve DPI filtreleme bypass problemlerini önlemek için otomatik ağ adaptasyonu uygular.
+* **DPI Test Aracı (BlockCheck):** Sansürlü hedeflere yönelik paket parçalama stratejilerini gerçek zamanlı olarak test eder.
+
+<div align="center">
+  <img src="3.png" alt="WinKit Anti-DPI ve Güvenli DNS" width="900" />
+</div>
+
+<br/>
+
+### 4. Tuş Dönüştürücü (Kernel Scancode Mapping)
+
+Windows çekirdeğinde (`HKLM\SYSTEM\CurrentControlSet\Control\Keyboard Layout\Scancode Map`) düşük gecikmeli donanımsal tuş eşlemesi sağlar:
+* **Kısayol İptali:** Windows 11 üzerinde sık karşılaşılan istenmeyen dil değiştirme kısayolunu (`Windows + Space`) sıfır gecikmeyle iptal eder.
+* **Donanım Tuş Eşleme:** Donanım seviyesinde tuş atamaları tanımlar (örneğin Sağ Ctrl tuşunu F20 veya başka bir fonksiyona yönlendirme).
+* **Oturum Entegrasyonu:** Arka planda çalışan sürekli bir hook mekanizmasına ihtiyaç duymadan, doğrudan Windows çekirdek eşlemesiyle çalışır.
+
+<div align="center">
+  <img src="4.png" alt="WinKit Tuş Dönüştürücü" width="900" />
+</div>
+
+<br/>
+
+### 5. Geri Yükleme ve Sistem Varsayılanlarına Dönüş
+
+Yapılan tüm çekirdek müdahalelerini, politika kısıtlamalarını ve ağ yapılandırmalarını güvenle geri alır:
+* **Windows Defender:** Kapatılan gerçek zamanlı korumayı, filtre sürücülerini ve güvenlik servislerini yeniden başlatır.
+* **Windows Update:** 2099 yılına kadar duraklatılmış güncelleme kısıtlamalarını kaldırarak `wuauserv` ve `UsoSvc` servislerini otomatik moda alır.
+* **Ağ ve DNS Sıfırlama:** DoH ve statik IP/DNS yapılandırmalarını temizler; bağdaştırıcıları fabrika çıkışı DHCP moduna döndürür.
+* **Erişilebilirlik Sıfırlama:** Kapatılmış Yapışkan Tuşlar ve klavye kısayollarını varsayılana getirir.
+* **Sistem Geri Yükleme:** Değişiklikler öncesinde ve sonrasında Windows Sistem Geri Yükleme Noktası oluşturur.
+
+<div align="center">
+  <img src="5.png" alt="WinKit Geri Yükleme" width="900" />
+</div>
+
+<br/>
+
+### 6. Windows Lisans Durumu ve Teşhisi
+
+Sistem lisans durumunu yerel Windows Management Instrumentation (WMI) üzerinden doğrudan sorgular:
+* **WMI Sorgulama:** `SoftwareLicensingProduct` sınıfı üzerinden ApplicationID filtrelemesi ile gerçek lisans durumunu, SKU kimliğini ve kısmi anahtar bilgisini okur.
+* **SPP Altyapısı:** Yazılım Koruma Platformu (Software Protection Platform) yapılandırmasını görüntüler.
+
+<div align="center">
+  <img src="6.png" alt="WinKit Windows Lisanslama" width="900" />
+</div>
 
 ---
 
-## 🚀 Başlangıç ve Çalıştırma
+## Mimari Yapı
 
-### Gereksinimler
-- **İşletim Sistemi:** Windows 10 (1809+) veya Windows 11 (21H2 - 24H2)
-- **Yetki:** Yönetici (Administrator) İzinleri
-- **Geliştirme İçin:** Python 3.10+ (veya 3.12 önerilir)
+```
+WinKit/
+├── core/                   # Düşük Seviyeli Sistem Mühendisliği Motoru
+│   ├── anti_dpi.py         # Zapret V1/V2 servis ve ağ şablon yöneticisi
+│   ├── appx_manager.py     # AppX paket listesi ve durum analizcisi
+│   ├── cli.py              # Konsol / CLI kontrolcüsü
+│   ├── constants.py        # Win32 sabitleri ve bayrak tanımları
+│   ├── context_menu.py     # Windows 10/11 sağ tık kayıt defteri entegrasyonu
+│   ├── debloater.py        # StateRepository SQLite ve AppX derin temizleme
+│   ├── defender.py         # Windows Defender ve minifilter sürücü kontrolü
+│   ├── dpi_tester.py       # Soket tabanlı sansür analiz motoru
+│   ├── edgewebview.py      # Edge ve WebView2 ilişkilendirme kontrolü
+│   ├── iso.py              # ISO unpack, autounattend.xml ve repack motoru
+│   ├── key_remap.py        # Scancode Map kayıt defteri eşleyicisi
+│   ├── licensing.py        # WMI lisans sorgulama ve SPP modülü
+│   ├── orchestrator.py     # İş parçacığı ve görev kuyruğu yöneticisi
+│   ├── privileges.py       # RtlAdjustPrivilege ve TrustedInstaller token çoğaltıcı
+│   ├── registry.py         # Atomik winreg kayıt defteri yöneticisi
+│   ├── restore.py          # Sistem geri yükleme noktası motoru
+│   ├── scanner.py          # Kalıntı dizin ve dosya tarayıcısı
+│   ├── shutup10.py         # O&O ShutUp10 kural ayrıştırıcısı
+│   ├── system.py           # Donanım, mimari ve yol yardımcıları
+│   └── tweaks.py           # Performans, FSO, MPO ve telemetri ilkeleri
+│
+├── gui/                    # PyQt6 Donanım Hızlandırmalı Grafik Katmanı
+│   ├── app.py              # Ana uygulama penceresi, sayfa yönlendiricisi ve işçiler
+│   ├── widgets.py          # Özel kartlar, animasyonlu switchler ve filtre çipleri
+│   ├── dialogs.py          # Modal pencereler ve ilerleme bildirimleri
+│   └── styles.py           # Koyu tema QSS stil tanımlamaları
+│
+├── zapret/                 # Anti-DPI ikilileri, sürücüler ve kural setleri
+├── winkit_main.py          # Uygulama ana giriş noktası (GUI / CLI)
+├── compile.bat             # PyInstaller tek parça derleme betiği
+└── kur_gereksinimler.bat   # Python ortam gereksinimleri yükleyicisi
+```
 
-### 1. Depoyu Klonlama ve Çalıştırma
+---
+
+## Sistem Uyumluluğu
+
+* **Hedef İşletim Sistemi:** Yalnızca **Windows 11 (25H2 / 24H2 - 64-bit)**
+* **Not:** Windows 10 veya eski Windows sürümleri mimari olarak hedeflenmemektedir. Kod tabanı Windows 11 25H2 servis yapısına ve kayıt defteri hiyerarşisine göre optimize edilmiştir.
+* **Gerekli İzinler:** Yerel Yönetici (Local Administrator) ayrıcalıkları zorunludur (UAC ile otomatik yükseltilir).
+
+---
+
+## Kurulum ve Çalıştırma
+
+### Kaynak Koddan Çalıştırma
+
+Geliştirme ve inceleme amacıyla doğrudan Python ortamından çalıştırmak için:
+
 ```powershell
-# Depoyu klonlayın
+# 1. Depoyu yerel ortama çekin
 git clone https://github.com/Mazi0182/WinKit.git
 cd WinKit
 
-# Gerekli kütüphaneleri yükleyin (PyQt6)
+# 2. Gereksinimleri yükleyin
 pip install -r requirements.txt
-# veya çift tıklayarak: kur_gereksinimler.bat
+# alternatif: .\kur_gereksinimler.bat
 
-# Yönetici olarak çalıştırın
+# 3. Yönetici ayrıcalıklarıyla başlatın
 python winkit_main.py
 ```
 
-### 2. Tek Parça EXE Olarak Derleme (Standalone Executable)
-Projeyi bağımsız tek bir çalıştırılabilir dosya (`dist\winkit.exe`) haline getirmek için:
+### Bağımsız EXE Olarak Derleme
+
+Projeyi tek bir taşınabilir `.exe` (`dist\winkit.exe`) haline getirmek için:
+
 ```powershell
-compile.bat
+.\compile.bat
 ```
 
 ---
 
-## 💻 Komut Satırı Arayüzü (CLI)
+## Komut Satırı Arayüzü (CLI)
 
-WinKit, arayüzsüz (headless) ve otomasyon scriptlerinde de tam yetkiyle çalışabilir:
+WinKit, grafik arayüze ihtiyaç duymadan doğrudan terminal üzerinden veya otomasyon betiklerinden yürütülebilir:
 
 ```powershell
-# Yardım menüsünü listeler
+# Komut listesi ve yardım
 python winkit_main.py --help
 
-# Sessiz modda debloat ve temizliği yürütür
+# Sessiz debloat ve telemetri temizliği
 python winkit_main.py --debloat
 
-# DNS ve DoH ayarlarını DHCP varsayılanlarına sıfırlar
+# Ağ ve DNS yapılandırmasını DHCP varsayılanlarına sıfırlama
 python winkit_main.py --test-dns-reset
 ```
 
 ---
 
-## 🤝 Üçüncü Taraf Araçlar ve Teşekkürler (Third-Party Credits)
+## Üçüncü Taraf Araçlar ve Telif Hakları (Third-Party Credits)
 
-WinKit, belirli sistem işlevlerini yerine getirmek amacıyla aşağıdaki saygın açık kaynak ve ücretsiz araçlardan faydalanmakta olup, bu projelerin geliştiricilerine ve hak sahiplerine teşekkür eder:
+WinKit bünyesinde kullanılan harici bileşenler ve hak sahipleri:
 
-- **[O&O ShutUp10++](https://www.oo-software.com/en/shutup10)** — *O&O Software GmbH.* Windows gizlilik ve telemetri yapılandırması için kullanılan ücretsiz (Freeware) güvenlik aracıdır.
-- **[oscdimg](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/oscdimg-command-line-options)** — *Microsoft Corporation.* Windows ADK bünyesinde yer alan önyüklenebilir Windows ISO oluşturma aracıdır.
-- **[7-Zip](https://www.7-zip.org/)** — *Igor Pavlov.* Yüksek sıkıştırma oranına sahip açık kaynaklı (GNU LGPL) arşiv yönetim aracıdır.
-- **[Zapret & WinDivert](https://github.com/bol-van/zapret)** — *bol-van & Basil Vadimovich.* DPI engellemelerini aşmak için geliştirilmiş açık kaynaklı ağ paket manipülasyon motorudur.
-- **[Microsoft Activation Scripts (MAS)](https://github.com/massgravel/Microsoft-Activation-Scripts)** — *Massgrave Team.* Açık kaynaklı Windows lisans durumu ve SPP yöntemleri referans alınmıştır.
-
----
-
-## ⚠️ Yasal Uyarı & Sorumluluk Reddi (Disclaimer)
-
-WinKit; Windows işletim sisteminin hassas bileşenlerine, kayıt defteri anahtarlarına ve sistem servislerine doğrudan müdahale eden güçlü bir yönetim aracıdır.
-
-- Yazılım **"olduğu gibi" (AS IS)** sunulmaktadır.
-- Bu yazılımın kullanımından doğabilecek veri kaybı, sistem kararsızlığı veya beklenmedik sistem davranışlarından kullanıcı sorumludur.
-- Herhangi bir optimizasyon uygulamadan önce **Sistem Geri Yükleme Noktası** oluşturmanız önemle tavsiye edilir.
+* **O&O ShutUp10++:** O&O Software GmbH tarafından sağlanan ücretsiz güvenlik ve gizlilik aracıdır. WinKit, telemetri politikalarını uygulamak için bu bileşenden yararlanır. [oo-software.com](https://www.oo-software.com/en/shutup10)
+* **oscdimg:** Microsoft Corporation tarafından sağlanan Windows ADK önyüklenebilir ISO üretim aracıdır. [learn.microsoft.com](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/oscdimg-command-line-options)
+* **7-Zip:** Igor Pavlov tarafından geliştirilen GNU LGPL lisanslı arşivleme aracıdır. [7-zip.org](https://www.7-zip.org/)
+* **Zapret & WinDivert:** bol-van ve Basil Vadimovich tarafından geliştirilmiş açık kaynaklı paket manipülasyon ve Anti-DPI motorudur. [github.com/bol-van/zapret](https://github.com/bol-van/zapret)
+* **Microsoft Activation Scripts (MAS):** Massgrave ekibi tarafından geliştirilen açık kaynaklı Windows lisans durumu ve SPP yöntemleri referans alınmıştır. [github.com/massgravel/Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts)
 
 ---
 
-## 📜 Lisans
+## Sorumluluk Reddi (Disclaimer)
 
-Bu proje [MIT Lisansı](LICENSE) kapsamında lisanslanmıştır. Detaylar için `LICENSE` dosyasına bakabilirsiniz.
+WinKit; Windows 11 kayıt defteri anahtarlarına, çekirdek servislerine ve güvenlik bileşenlerine doğrudan müdahale eden bir sistem mühendisliği aracıdır.
+
+Yazılım **olduğu gibi (AS IS)** sunulmakta olup, kullanımından kaynaklanabilecek sistem kararsızlıkları veya veri kayıplarından son kullanıcı sorumludur. İşlem yapmadan önce dahili Geri Yükleme modülü üzerinden Sistem Geri Yükleme Noktası oluşturulması tavsiye edilir.
+
+---
+
+## Lisans
+
+Bu proje [MIT Lisansı](LICENSE) kapsamında lisanslanmıştır.
